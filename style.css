@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, serif;
+}
+
+:root {
+    --Verydarkblue: hsl(233, 47%, 7%);
+    --Darkdesaturatedblue: hsl(244, 38%, 16%);
+    --Softviolet: hsl(277, 64%, 61%);
+    --White: hsl(0, 0%, 100%);
+    --Slightlytransparentwhitepara: hsla(0, 0%, 100%, 0.75);
+    --Slightlytransparentwhite: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Verydarkblue);
+}
+
+.wrapper {
+    display: flex;
+    max-width: 900px;
+    height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.wrapper .cardContent {
+    flex: 1;
+    padding: 3.5rem;
+    background-color: var(--Darkdesaturatedblue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+
+.wrapper .cardContent .header {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--White);
+    padding-bottom: 1.5rem;
+}
+
+.headerStyle {
+    color: var(--Softviolet);
+}
+
+.cardContent .desc {
+    font-size: .8rem;
+    color: var(--Slightlytransparentwhite);
+    line-height: 20px;
+}
+
+.cardContent .stats {
+    width: 85%;
+    margin-top: 4rem;
+    align-self: start;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats p {
+    font-size: .6rem;
+    font-family: "Lexend Deca",serif;
+    text-transform: uppercase;
+    color: var(--Slightlytransparentwhite);
+    letter-spacing: 1px;
+}
+
+.stats span {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--White);
+    padding-bottom: .2rem;
+}
+
+/* Image style */
+.wrapper .cardImage {
+    max-width: 460px;
+    height: 100%;
+    position: relative;
+}
+
+.cardImage .desktop {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardImage .mobile{
+    display: none;
+}
+
+.Overlayer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background-color: hsla(277, 120%, 30%, 0.555);
+}
+
+/* Responsive  */
+
+@media screen  and (max-Width: 1024px){
+    .wrapper .cardContent {
+        padding: 3rem;
+    }
+}
+
+@media screen and (max-Width: 940px){
+    body{
+        height: auto;
+    }
+    .wrapper{
+        flex-direction: column-reverse;
+        max-width: 540px;
+        height: auto;
+        margin-block: 2rem;
+    }
+    .wrapper .cardImage{
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .cardImage .desktop {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .cardContent .stats {
+        width: 100%;
+        margin-top: 2rem;
+        align-self: start;
+        display: flex;
+        justify-content: space-around;
+    }
+    .Overlayer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width:100%;
+        height: 100%;
+        background-color: hsla(277, 120%, 30%, 0.555);
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .wrapper{
+        flex-direction: column-reverse;
+        max-width: 360px;
+        height: auto;
+    }
+    .wrapper .cardContent {
+        padding: 2.75rem;
+    }
+    .cardContent .stats {
+        width: 100%;
+        margin-top: 1rem;
+        align-self: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .wrapper .cardContent .header{
+        text-align: center;
+    }
+    .cardContent .desc{
+        text-align: center;
+        font-size: .95rem;
+    }
+    .cardImage .desktop{
+        display: none;
+    }
+    .cardImage .mobile{
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .wrapper {
+        margin: 1rem;
+    }
+}
